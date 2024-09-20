@@ -31,3 +31,8 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Test with Maven
       run: mvn -B test --file pom.xml
+    - name: Build with Maven Checkstyle
+      run: mvn -B verify checkstyle:checkstyle
+    - uses: jwgmeligmeyling/checkstyle-github-action@master
+      with:
+        path: '**/checkstyle-result.xml'
