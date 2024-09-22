@@ -33,7 +33,9 @@ jobs:
       run: mvn -B test --file pom.xml
     - name: Build with Maven Checkstyle
       run: mvn -B verify checkstyle:checkstyle
-    - name: Generate JaCoCo Badge
-      uses: cicirello/jacoco-badge-generator@v2
-      with: 
-        jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+    # - name: Generate JaCoCo Badge
+    #   uses: cicirello/jacoco-badge-generator@v2
+    #   with: 
+    #     jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+    - name: Spotbugs
+      run: mvn spotbugs:check
