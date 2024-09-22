@@ -33,4 +33,4 @@ jobs:
       run: mvn -B test --file pom.xml
     - name: Build with Maven Checkstyle
       run: mvn -B verify checkstyle:checkstyle
-    - run: java HelloWorldApp.java
+    - run: java Main.java
