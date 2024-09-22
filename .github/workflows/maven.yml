@@ -31,8 +31,11 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Test with Maven
       run: mvn -B test --file pom.xml
-    - name: Build with Maven Checkstyle
+    - name: Build with Maven with checkstyle
       run: mvn -B verify checkstyle:checkstyle
+    - uses: jwgmeligmeyling/checkstyle-github-action@master
+      with:
+        path: '**/checkstyle-result.xml'
     # - name: Generate JaCoCo Badge
     #   uses: cicirello/jacoco-badge-generator@v2
     #   with: 
