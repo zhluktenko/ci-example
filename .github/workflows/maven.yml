@@ -33,4 +33,6 @@ jobs:
       run: mvn -B test --file pom.xml
     - name: Build with Maven Checkstyle
       run: mvn -B verify checkstyle:checkstyle
-    - run: java ua.edu.ucu.apps.Main.java
+    - name: Generate JaCoCo Badge
+      uses: cicirello/jacoco-badge-generator@v2
+      with: jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
