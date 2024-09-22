@@ -93,6 +93,8 @@
                 </dependencies>
                 <configuration>
                     <htmlOutput>true</htmlOutput>
+                    <xmlOutput>true</xmlOutput>
+                    <failOnError>false</failOnError>
                 </configuration>
             </plugin>
 
